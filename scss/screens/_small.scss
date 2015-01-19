@@ -1,0 +1,50 @@
+@include breakpoint ($small) {
+
+	#about {
+		h2+p {
+			margin-right: span(1);
+			margin-left: span(1);
+		}
+		.about-items {
+			li {
+				@include gallery(4);
+			}
+			.icon {
+				font-size: 120px;
+			}
+		}
+	}
+
+	#portfolio {
+		.thumbnail-list {
+			@include squish(1);
+			li {
+				@include gallery(6);
+			}
+		}
+	}
+
+	#team {
+		.team-members {
+			&>li {
+				@include gallery(6);
+			}
+		}
+	}
+
+	#contacts {
+		.contacts-info {
+			&>li {
+				@include gallery(6);
+			}
+		}
+	}
+
+	footer {
+		.contacts-info {
+			li {
+				@include gallery(4);
+			}
+		}
+	}
+}

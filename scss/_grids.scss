@@ -1,0 +1,33 @@
+// Requirements
+// ============
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/utilities";
+@import "susy";
+@import "breakpoint";
+
+$small: 750px;
+$medium: 970px;
+$large: 1170px;
+
+$susy: (
+	flow: ltr,
+	math: fluid,
+	output: float, 
+	gutter-position: after,
+	container: 1170px,
+	container-position: center,
+	columns: 12,
+	gutters: 30px/70px,
+	column-width: false,
+	global-box-sizing: border-box,
+	last-flow: to,
+	// debug: (
+	// 	image: show,
+	// 	color: rgba(#66f, .5),
+	// 	output: background,
+	// 	toggle: top right,
+	// ),
+);
+
+@include border-box-sizing;
