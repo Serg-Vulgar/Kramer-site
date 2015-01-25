@@ -1,25 +1,24 @@
 @include breakpoint ($large) {
 
-	#about {
-		h2+p {
-			margin-left: span(3);
-			margin-right: span(3);
-		}
-		.about-items {
-			.icon {
-				font-size: 180px;
+	#intro {
+		.container {
+			h3 {
+				font-size: 4rem;
+				@include pad(1.5);
 			}
 		}
 	}
 
-	#portfolio {
-		.thumbnail-list {
-			@include squish(1);
-			li {
-				@include gallery(4);
+	#about {
+			h2+p {
+				
+			}
+			.about-items {
+				.icon {
+					font-size: 7.6rem;
+				}
 			}
 		}
-	}
 
 	#team {
 		.team-members {
@@ -32,11 +31,11 @@
 		}
 	}
 
-	#contact {
+	footer {
 		.contacts-info {
-			margin-right: span(3);
-			margin-left: span(3);
+			li a {
+				margin-right: 1rem;
+			}
 		}
 	}
-
 }

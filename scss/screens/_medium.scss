@@ -1,32 +1,43 @@
 @include breakpoint ($medium) {
 
-	#banner {
-		background:transparent;
+	#intro {
+		background: transparent;
+		padding-bottom: 56.25%;
+		height: 0;
+		overflow: hidden;
 		.main-video {
 			position: absolute;
 			top: 0;
 			left: 0;
 			z-index: -9;
-			min-width: 100%;
-			min-height: 100%;
+			width: 100%;
+			height: 100%;
 			overflow: hidden;
 			display: block;
+		}
+		.container {
+			h3 {
+				@include pad(1 no-gutters);
+			}
 		}
 	}
 
 	#about {
-		h2+p {
-			margin-left: span(2);
-			margin-right: span(2);
-			text-align: left;
-		}
 		.about-items {
 			.icon {
-				font-size: 150px;
+				font-size: 6.5rem;
 			}
 			p {
 				margin-left: span(2);
 				margin-right: span(2);
+			}
+		}
+	}
+
+	#portfolio {
+		.thumbnail-list {
+			li {
+				@include gallery(4);
 			}
 		}
 	}
@@ -41,13 +52,20 @@
 		}
 	}
 
-	#contact {
+	#contacts {
+		.contact-form {
+			@include span(4);
+			margin-left: span(3 wide);
+			margin-right: span(1 wider);
+		}
 		.contacts-info {
-			margin-right: span(2);
-			margin-left: span(2);
-			&>li {
-				@include  post(1);
-			}
+			@include span(2 wide);
+		}
+	}
+
+	footer {
+		.contacts-info {
+			margin-right: span(2 wide);
 		}
 	}
 

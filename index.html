@@ -3,49 +3,52 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Kramer</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<script src="js/modernizr.js"></script>
 	<!--[if lt IE 9]>
-	<script src="http://css3-mediaqueries-js.googlecode.com/files/css3-mediaqueries.js"></script>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
 <body>
-
-
-	<header>
-		<h1>
-			<a href="#" class="logo">
-				<img src="img/logo.png" alt="logo">
-			</a>
-		</h1>
-		<nav id="menu">
-			<div class="icon">&#9776;</div>
-			<ul class="items">
-				<li><a href="#about">About</a></li>
-				<li><a href="#portfolio">Portfolio</a></li>
-				<li><a href="#team">Team</a></li>
-				<li><a href="#contacts">Contact</a></li>
-			</ul>
+	<div id="intro">
+		<video preload="none" autoplay="autoplay" loop="loop"  class="main-video">
+			<source src="videos/main-video.mp4" type="video/mp4">
+			<source src="videos/main-video.webm" type="video/webm">
+			<source src="videos/main-video.ogv" type="video/ogg">
+		</video>
+		<section>
+		<header>
+			<h1>
+				<a href="#intro" class="logo">
+					<img src="img/logo.png" alt="Kramer">Kramer
+				</a>
+			</h1>
+			<nav id="menu">
+				<div class="icon">&#9776;</div>
+				<ul class="items">
+					<li><a href="#about">About</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#team">Team</a></li>
+					<li><a href="#contacts">Contact</a></li>
+				</ul>
 			</nav>
-	</header>
-
-		<section id="banner">
-			<video preload="none"  autoplay="autoplay" loop="loop"  class="main-video">
-				<source src="videos/main-video.webm">
-			</video>
-
+		</header>
+		
+		<div class="welcome">
 			<div class="container">
-				<p>Welcome To Kramerica Industries</p>
+				<h3>Welcome To Kramerica Industries</h3>
 				<div class="explore-button">
 					<a href="#portfolio">
 						<span class="explore-icon">v</span>
 						<span>Explore</span>
 					</a>
 				</div>
-
 			</div>
-			</section>
+		</div>
+		</section>
+	</div>
 
 		<main class="site-main">
 
@@ -99,34 +102,52 @@
 
 					<ul class="thumbnail-list">
 						<li>
-							<a href="#">
-								<img src="img/portfolio/Top-Left.png" alt="Some text">
-							</a>
+							<img src="img/portfolio/Top-Left.jpg" alt="Some text">
+							<div class="rollover">
+								<h4>Project Title</h4>
+								<a href="#">View project</a>
+							</div>
 						</li>
+
+
 						<li>
-							<a href="#">
-								<img src="img/portfolio/Top-middle.png" alt="Some text">
-							</a>
+							<img src="img/portfolio/Top-middle.jpg" alt="Some text">
+							<div class="rollover">
+								<h4>Project Title</h4>
+								<a href="#">View project</a>
+							</div>
 						</li>
+
 						<li>
-							<a href="#">
-								<img src="img/portfolio/Top-Right Selected.png" alt="Some text">
-							</a>
+							<img src="img/portfolio/Top-Right Selected.jpg" alt="Some text">
+							<div class="rollover">
+								<h4>Project Title</h4>
+								<a href="#">View project</a>
+							</div>
 						</li>
+
 						<li>
-							<a href="#">
-								<img src="img/portfolio/Bottom-Left.png" alt="Some text">
-							</a>
+							<img src="img/portfolio/Bottom-Left.jpg" alt="Some text">
+							<div class="rollover">
+								<h4>Project Title</h4>
+								<a href="#">View project</a>
+							</div>
 						</li>
+
 						<li>
-							<a href="#">
-								<img src="img/portfolio/Bottom-Middle.png" alt="Some text">
-							</a>
+							<img src="img/portfolio/Bottom-Middle.jpg" alt="Some text">
+							<div class="rollover">
+								<h4>Project Title</h4>
+								<a href="#">View project</a>
+							</div>
 						</li>
+
 						<li>
-							<a href="#">
-								<img src="img/portfolio/Bottom-Right.png" alt="Some text">
-							</a>
+							<img src="img/portfolio/Bottom-Right.jpg" alt="Some text">
+							<div class="rollover">
+								<h4>Project Title</h4>
+								<a href="#">View project</a>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -139,9 +160,9 @@
 						<li>
 							<h3>
 								<span class="thumbnail">
-									<img src="img/team/Cosmo.png" alt="Cosmo Kramer">
+									<img src="img/team/Cosmo.jpg" alt="Cosmo Kramer">
 								</span>
-								Cosmo Kramer <!-- тут спан вроде как не нужен -->
+								Cosmo Kramer <!-- тут спан вроде как не нужен-->
 							</h3>
 							<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor,</p>
 							<a href="#" class="icon">t</a>
@@ -150,7 +171,7 @@
 						<li>
 							<h3>
 								<span class="thumbnail">
-									<img src="img/team/George.png" alt="George Constanza">
+									<img src="img/team/George.jpg" alt="George Constanza">
 								</span>
 								George Constanza
 							</h3>
@@ -164,43 +185,40 @@
 			<section id="contacts">
 				<div class="container">
 					<h2>Contact</h2>
-					<p> Please contact us and we can discuss work! </p>
-					<ul class="contacts-info">
-						<li>
-							<form action="post">
-								<ul>
-									<li>
-										<input type="text" name="name" id="name" tabindex="1" placeholder="Name">
-									</li>
-									<li>
-										<input type="text" name="email" id="email" tabindex="2" placeholder="Email">
-									</li>
-									<li>
-										<textarea rows="4" name="textarea" id="textarea"  tabindex="3" placeholder="Message"></textarea>
-									</li>
-									<li>
-										<input type="submit" class="btn btn-primary" value="Submit">
-									</li>
-								</ul>
-							</form>
-						</li>
-						<li>
-							<ul>
+					<h3> Please contact us and we can discuss work! </h3>
+					<div class="contacts">
+						<form action="post">
+							<ul class="contact-form">
 								<li>
-									<h3>Adress</h3>
-									<p> 129 West 81st Street<br/>New York, NY 10024</p>
+									<input type="text" name="name" id="name" tabindex="1" placeholder="Name">
 								</li>
 								<li>
-									<h3>Email</h3>
-									<a href="mailto:gyddyup@kramer.com">gyddyup@kramer.com</a>
+									<input type="text" name="email" id="email" tabindex="2" placeholder="Email">
 								</li>
 								<li>
-									<h3>Phone</h3>
-									<a href="tel:+12125321256">+1 212-532-1256</a>
+									<textarea rows="4" name="textarea" id="textarea"  tabindex="3" placeholder="Message"></textarea>
+								</li>
+								<li>
+									<input type="submit" class="btn btn-primary" value="Submit">
 								</li>
 							</ul>
-						</li>
-					</ul>
+						</form>
+
+						<ul class="contacts-info">
+							<li>
+								<h3>Address</h3>
+								<p>129 West 81st Street<br/>New York, NY 10024</p>
+							</li>
+							<li>
+								<h3>Email</h3>
+								<a href="mailto:gyddyup@kramer.com">gyddyup@kramer.com</a>
+							</li>
+							<li>
+								<h3>Phone</h3>
+								<a href="tel:+12125321256">+1 212-532-1256</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -213,10 +231,10 @@
 
 				<ul class="contacts-info">
 					<li>
-						<p> 129 West 81st Street<br/>New York, NY 10024 </p>
+						<p>129 West 81st Street<br/>New York, NY 10024</p>
 					</li>
 
-					<li class="contacts">
+					<li>
 						<a href="mailto:gyddyup@kramer.com">gyddyup@kramer.com</a>
 						<a href="tel:+12125321256">+1 212-532-1256</a>
 					</li>
@@ -230,6 +248,7 @@
 			</div>
 		</footer>
 		<script src="js/jquery-2.1.3.min.js"></script>
+		<script src="js/active-item.js"></script>
 		<script src="js/scroll.js"></script>
 		<!-- Скрипт для выпадания меню в мобайл -->
 		<script>

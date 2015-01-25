@@ -1,9 +1,19 @@
 @include breakpoint ($small) {
 
+	#intro {
+		background:url('../img/Header Bg - large.jpg') no-repeat scroll center top / cover transparent;
+		.container {
+			h3 {
+				@include pad(1 no-gutters);
+			}
+		}
+	}
+
 	#about {
 		h2+p {
-			margin-right: span(1);
-			margin-left: span(1);
+			margin-right: span(2 wide);
+			margin-left: span(2 wide);
+			text-align: left;
 		}
 		.about-items {
 			li {
@@ -17,7 +27,6 @@
 
 	#portfolio {
 		.thumbnail-list {
-			@include squish(1);
 			li {
 				@include gallery(6);
 			}
@@ -33,18 +42,24 @@
 	}
 
 	#contacts {
+		.contact-form {
+			@include span(5);
+			margin-left: span(1 wide);
+			margin-right: span(1 wider);
+		}
 		.contacts-info {
-			&>li {
-				@include gallery(6);
-			}
+			@include span(4);
 		}
 	}
 
 	footer {
 		.contacts-info {
+			margin-left: span(1 wide);
 			li {
+				text-align: left;
 				@include gallery(4);
 			}
 		}
 	}
 }
+

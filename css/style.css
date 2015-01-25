@@ -75,21 +75,48 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-style: normal;
 }
 @font-face {
-  font-family: 'Icons';
-  src: url("../fonts/Icons.woff") format("woff"), url("../fonts/Icons.otf") format("truetype");
+  font-family: 'droid_serifregular';
+  src: url("../fonts/DroidSerif-Regular-webfont.eot");
+  src: url("../fonts/DroidSerif-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSerif-Regular-webfont.woff") format("woff"), url("../fonts/DroidSerif-Regular-webfont.ttf") format("truetype"), url("../fonts/DroidSerif-Regular-webfont.svg#droid_serifregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Icons';
+  src: url("../fonts/Icons.eot");
+  src: url("../fonts/Icons.woff") format("woff"), url("../fonts/Icons.otf") format("truetype"), url("../fonts/Icons.ttf") format("truetype"), url("../fonts/Icons.svg#Icons_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/*----------Default styles----------*/
 html {
   height: 100%;
+  font-size: 1.250rem;
 }
 
 body {
   color: #fff;
   height: 100%;
   font-family: "Droid Sans", Helvetica, Arial, sans-serif;
-  font-size: 14px;
   line-height: 1.4;
+}
+
+h2, h3, h4 {
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: 2.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: "Droid Serif", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -97,29 +124,11 @@ a {
   color: #fff;
 }
 
-p {
-  margin: 0px 0px 10px;
-}
-
-h2, h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-h3 {
-  font-size: 24px;
-}
-
+/*----------Grid----------*/
 .container {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 .container:after {
   content: " ";
@@ -127,22 +136,30 @@ h3 {
   clear: both;
 }
 
+/*----------Header----------*/
 header {
   z-index: 999;
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
-  min-height: 73px;
   background: rgba(44, 62, 80, 0.8);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
 }
 header .logo {
   float: left;
-  padding: 8px 15px;
+  margin-left: 8.54701%;
+  margin-top: 1rem;
+  width: 140px;
+  height: 52px;
+  overflow: hidden;
 }
 
+/*----------Menu----------*/
 #menu {
   text-align: right;
+  margin-right: 5.98291%;
 }
 #menu .icon {
   display: none;
@@ -151,13 +168,17 @@ header .logo {
   display: inline-block;
 }
 #menu a {
-  padding: 28px 15px;
+  padding: 1.4rem .8rem;
   color: #fff;
   text-decoration: none;
   display: inline-block;
+  font-size: 1.1rem;
 }
 #menu a:hover {
   background: #2ecc71;
+}
+#menu .active {
+  background: red;
 }
 
 .showitems {
@@ -166,12 +187,12 @@ header .logo {
 
 @media screen and (max-width: 750px) {
   #menu .icon {
-    font-size: 24px;
+    font-size: 3rem;
     cursor: pointer;
     color: #fff;
     display: block;
     text-align: right;
-    margin: 20px 20px 10px 0;
+    margin-right: 1rem;
   }
   #menu .items {
     display: none;
@@ -180,35 +201,44 @@ header .logo {
     display: block;
   }
   #menu .items li a {
+    margin-left: 8.54701%;
     display: block;
-    padding: 10px 15px;
+    padding: .5rem .75rem;
   }
 }
-#banner {
-  padding-top: 73px;
-  text-align: center;
-  background: url("../img/Header Background 2.png") no-repeat scroll center top/cover transparent;
-  height: 100%;
+/*----------Intro----------*/
+#intro {
   position: relative;
+  text-align: center;
+  background: url("../img/Header Bg - small.jpg") no-repeat scroll center top/cover transparent;
+  height: 100%;
 }
-#banner .main-video {
+#intro .main-video {
   display: none;
 }
-#banner .container {
+#intro .welcome {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(44, 62, 80, 0.5);
+}
+#intro .container {
   height: 100%;
   display: table;
+  overflow: hidden;
 }
-#banner .container p:first-child {
+#intro .container h3 {
   display: table-cell;
-  font-size: 3.5em;
+  font-size: 3rem;
   vertical-align: middle;
 }
 
 .explore-button {
   position: absolute;
-  bottom: 3.35em;
+  bottom: 5rem;
   left: 0;
   width: 100%;
+  background: url(../img/btn-bg.png) repeat-x center 30px;
 }
 .explore-button a {
   display: inline-block;
@@ -219,92 +249,155 @@ header .logo {
   height: 60px;
   width: 60px;
   font-family: "Icons";
-  font-size: 18px;
+  font-size: 1rem;
   background: #2ecc71;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  behavior: url(js/PIE.htc);
 }
 .explore-button a span {
   display: block;
-  font-size: 27px;
+  font-size: 1.35rem;
+  font-family: "Droid Serif", Helvetica, Arial, sans-serif;
+  margin-top: .5rem;
 }
 .explore-button a:hover .explore-icon {
   color: #000;
 }
 
+/*----------Main----------*/
 .site-main {
   text-align: center;
 }
 .site-main section {
-  padding-top: 73px;
-  padding-bottom: 36.5px;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
 }
 
 #about {
   background-color: #34495e;
 }
+#about h2 + p {
+  font-size: 1.2rem;
+  margin-left: 8.54701%;
+  margin-right: 8.54701%;
+}
 #about .about-items {
   margin-right: 5.98291%;
   margin-left: 5.98291%;
-  margin-top: 50px;
+  margin-top: 4rem;
+}
+#about .about-items li {
+  margin-top: 1.5rem;
 }
 #about .about-items .icon {
   display: block;
   margin: 0 auto;
   font-family: "Icons";
-  font-size: 100px;
+  font-size: 7.6rem;
+  font-weight: normal;
+}
+#about .about-items p {
+  font-size: 1rem;
 }
 
 #portfolio {
   color: #2c3e50;
 }
-#portfolio .portfolio-menu li {
+
+.portfolio-menu li {
   display: inline-block;
+  margin-right: .8rem;
 }
-#portfolio .portfolio-menu li a {
+.portfolio-menu li a {
   display: inline-block;
   color: #2c3e50;
-  padding: 10px 15px;
+  padding: .05rem .8rem;
+  font-size: 1.5rem;
 }
-#portfolio .portfolio-menu li a:hover, #portfolio .portfolio-menu li a.active {
+.portfolio-menu li a:hover, .portfolio-menu li a.active {
   color: #fff;
   background-color: #2ecc71;
-  border-radius: 2em;
+  -moz-border-radius: 0.9rem;
+  -webkit-border-radius: 0.9rem;
+  border-radius: 0.9rem;
+  behavior: url(js/PIE.htc);
 }
-#portfolio .thumbnail-list li {
+
+.thumbnail-list {
+  margin-top: 4.4rem;
+}
+.thumbnail-list li {
   border: 1px solid #DDD;
   width: 48.71795%;
   float: left;
-  margin-top: 50px;
-  padding: 4px;
+  margin-top: 1.4rem;
+  padding: .5rem;
+  position: relative;
 }
-#portfolio .thumbnail-list li:nth-child(2n + 1) {
+.thumbnail-list li:nth-child(2n + 1) {
   margin-left: 0;
   margin-right: -100%;
   clear: both;
   margin-left: 0;
 }
-#portfolio .thumbnail-list li:nth-child(2n + 2) {
+.thumbnail-list li:nth-child(2n + 2) {
   margin-left: 51.28205%;
   margin-right: -100%;
   clear: none;
 }
-#portfolio .thumbnail-list li:hover {
+.thumbnail-list li img {
+  max-width: 100%;
+}
+.thumbnail-list li:hover .rollover {
+  visibility: visible;
   border: 1px solid #2ecc71;
 }
-#portfolio .thumbnail-list li a {
-  display: block;
+.thumbnail-list li .rollover {
+  visibility: hidden;
+  background: rgba(44, 62, 80, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-#portfolio .thumbnail-list li a img {
-  max-width: 100%;
+.thumbnail-list li .rollover h4 {
+  padding-top: 5rem;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: default;
+}
+.thumbnail-list li .rollover a {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .3rem .8rem;
+  -moz-border-radius: 0.75rem;
+  -webkit-border-radius: 0.75rem;
+  border-radius: 0.75rem;
+  behavior: url(js/PIE.htc);
+  font-size: .6rem;
+  border: 1px solid #fff;
+}
+.thumbnail-list li .rollover a:hover {
+  background: rgba(46, 204, 113, 0.8);
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
 #team {
   background: #2980b9;
 }
+#team .team-members {
+  margin-left: 5.98291%;
+  margin-right: 5.98291%;
+}
 #team .team-members > li {
-  margin-top: 10px;
+  margin-top: 2rem;
   padding: 4px;
 }
 #team .team-members > li .thumbnail {
@@ -317,11 +410,17 @@ header .logo {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  behavior: url(js/PIE.htc);
+  margin-bottom: 1em;
 }
 #team .team-members > li .icon {
   display: inline-block;
   font-family: "Icons";
-  font-size: 40px;
+  font-size: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+  letter-spacing: 1rem;
+  margin-left: 1rem;
 }
 #team .team-members > li .icon:hover {
   color: #000;
@@ -330,19 +429,19 @@ header .logo {
 #contacts {
   color: #2c3e50;
 }
-#contacts .contacts-info {
+#contacts .contacts {
   text-align: left;
-  clear: both;
+  overflow: hidden;
 }
-#contacts .contacts-info a {
-  color: #2ecc71;
+#contacts .contacts a {
+  color: #2c3e50;
 }
-#contacts .contacts-info li {
+#contacts .contact-form li {
+  margin-bottom: 2.2rem;
   overflow: hidden;
   *zoom: 1;
-  margin-bottom: 25px;
 }
-#contacts .contacts-info li [type="text"], #contacts .contacts-info li [type="email"], #contacts .contacts-info li textarea {
+#contacts .contact-form [type="text"], #contacts .contact-form [type="email"], #contacts .contact-form textarea {
   width: 100%;
   float: left;
   margin-left: 0;
@@ -350,50 +449,76 @@ header .logo {
   border-style: none none solid;
   border-width: 2px;
   border-bottom-color: #2ecc71;
+  font-size: 1.3rem;
+  font-family: "Droid Serif", Helvetica, Arial, sans-serif;
+  color: #2c3e50;
 }
-#contacts .contacts-info li input[type="submit"] {
+#contacts .contact-form input[type="submit"] {
   float: left;
-  width: 80px;
   display: inline-block;
   color: #fff;
   background-color: #2ecc71;
   border-color: #2ecc71;
   border: 1px solid transparent;
-  border-radius: 2em;
-  padding: 6px 12px;
+  -moz-border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  border-radius: 0.8rem;
+  behavior: url(js/PIE.htc);
+  padding: .3rem 1rem;
   cursor: pointer;
+  font-size: 1.05rem;
+  font-family: "Droid Serif", Helvetica, Arial, sans-serif;
+}
+#contacts .contacts-info li {
+  margin-bottom: 2.2rem;
+}
+#contacts .contacts-info h3 {
+  font-size: .8rem;
+  margin-bottom: .3rem;
 }
 
+/*----------Footer----------*/
 footer {
   background-color: #2c3e50;
-  padding-top: 36.5px;
-  padding-bottom: 36.5px;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 footer .footer-logo {
   display: inline-block;
+  margin-left: 8.54701%;
 }
 footer .contacts-info {
   text-align: center;
+  overflow: hidden;
 }
 footer .contacts-info li {
-  margin-top: 40px;
+  margin-top: 2rem;
 }
 footer .contacts-info .icon {
   display: inline-block;
   font-family: "Icons";
-  font-size: 40px;
+  font-size: 2.8rem;
 }
 footer .contacts-info .icon:hover {
   color: #000;
 }
-footer .contacts-info .contacts a {
+footer .contacts-info a {
   display: block;
 }
 
 @media (min-width: 750px) {
+  #intro {
+    background: url("../img/Header Bg - large.jpg") no-repeat scroll center top/cover transparent;
+  }
+  #intro .container h3 {
+    padding-left: 8.54701%;
+    padding-right: 8.54701%;
+  }
+
   #about h2 + p {
-    margin-right: 5.98291%;
-    margin-left: 5.98291%;
+    margin-right: 17.09402%;
+    margin-left: 17.09402%;
+    text-align: left;
   }
   #about .about-items li {
     width: 31.62393%;
@@ -419,10 +544,6 @@ footer .contacts-info .contacts a {
     font-size: 120px;
   }
 
-  #portfolio .thumbnail-list {
-    margin-left: 8.54701%;
-    margin-right: 8.54701%;
-  }
   #portfolio .thumbnail-list li {
     width: 48.71795%;
     float: left;
@@ -455,23 +576,24 @@ footer .contacts-info .contacts a {
     clear: none;
   }
 
-  #contacts .contacts-info > li {
-    width: 48.71795%;
+  #contacts .contact-form {
+    width: 40.17094%;
     float: left;
+    margin-right: 2.5641%;
+    margin-left: 8.54701%;
+    margin-right: 11.11111%;
   }
-  #contacts .contacts-info > li:nth-child(2n + 1) {
-    margin-left: 0;
-    margin-right: -100%;
-    clear: both;
-    margin-left: 0;
-  }
-  #contacts .contacts-info > li:nth-child(2n + 2) {
-    margin-left: 51.28205%;
-    margin-right: -100%;
-    clear: none;
+  #contacts .contacts-info {
+    width: 31.62393%;
+    float: left;
+    margin-right: 2.5641%;
   }
 
+  footer .contacts-info {
+    margin-left: 8.54701%;
+  }
   footer .contacts-info li {
+    text-align: left;
     width: 31.62393%;
     float: left;
   }
@@ -493,31 +615,54 @@ footer .contacts-info .contacts a {
   }
 }
 @media (min-width: 970px) {
-  #banner {
+  #intro {
     background: transparent;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
   }
-  #banner .main-video {
+  #intro .main-video {
     position: absolute;
     top: 0;
     left: 0;
     z-index: -9;
-    min-width: 100%;
-    min-height: 100%;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     display: block;
   }
-
-  #about h2 + p {
-    margin-left: 14.52991%;
-    margin-right: 14.52991%;
-    text-align: left;
+  #intro .container h3 {
+    padding-left: 8.54701%;
+    padding-right: 8.54701%;
   }
+
   #about .about-items .icon {
-    font-size: 150px;
+    font-size: 6.5rem;
   }
   #about .about-items p {
     margin-left: 14.52991%;
     margin-right: 14.52991%;
+  }
+
+  #portfolio .thumbnail-list li {
+    width: 31.62393%;
+    float: left;
+  }
+  #portfolio .thumbnail-list li:nth-child(3n + 1) {
+    margin-left: 0;
+    margin-right: -100%;
+    clear: both;
+    margin-left: 0;
+  }
+  #portfolio .thumbnail-list li:nth-child(3n + 2) {
+    margin-left: 34.18803%;
+    margin-right: -100%;
+    clear: none;
+  }
+  #portfolio .thumbnail-list li:nth-child(3n + 3) {
+    margin-left: 68.37607%;
+    margin-right: -100%;
+    clear: none;
   }
 
   #team .team-members {
@@ -540,46 +685,32 @@ footer .contacts-info .contacts a {
     clear: none;
   }
 
-  #contact .contacts-info {
-    margin-right: 14.52991%;
-    margin-left: 14.52991%;
+  #contacts .contact-form {
+    width: 31.62393%;
+    float: left;
+    margin-right: 2.5641%;
+    margin-left: 25.64103%;
+    margin-right: 11.11111%;
   }
-  #contact .contacts-info > li {
-    margin-right: 8.54701%;
+  #contacts .contacts-info {
+    width: 17.09402%;
+    float: left;
+    margin-right: 2.5%;
+  }
+
+  footer .contacts-info {
+    margin-right: 17.09402%;
   }
 }
 @media (min-width: 1170px) {
-  #about h2 + p {
-    margin-left: 23.07692%;
-    margin-right: 23.07692%;
-  }
-  #about .about-items .icon {
-    font-size: 180px;
+  #intro .container h3 {
+    font-size: 4rem;
+    padding-left: 12.82051%;
+    padding-right: 12.82051%;
   }
 
-  #portfolio .thumbnail-list {
-    margin-left: 8.54701%;
-    margin-right: 8.54701%;
-  }
-  #portfolio .thumbnail-list li {
-    width: 31.62393%;
-    float: left;
-  }
-  #portfolio .thumbnail-list li:nth-child(3n + 1) {
-    margin-left: 0;
-    margin-right: -100%;
-    clear: both;
-    margin-left: 0;
-  }
-  #portfolio .thumbnail-list li:nth-child(3n + 2) {
-    margin-left: 34.18803%;
-    margin-right: -100%;
-    clear: none;
-  }
-  #portfolio .thumbnail-list li:nth-child(3n + 3) {
-    margin-left: 68.37607%;
-    margin-right: -100%;
-    clear: none;
+  #about .about-items .icon {
+    font-size: 7.6rem;
   }
 
   #team .team-members > li p {
@@ -587,8 +718,7 @@ footer .contacts-info .contacts a {
     margin-right: 14.52991%;
   }
 
-  #contact .contacts-info {
-    margin-right: 23.07692%;
-    margin-left: 23.07692%;
+  footer .contacts-info li a {
+    margin-right: 1rem;
   }
 }
