@@ -61,13 +61,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 @font-face {
-  font-family: 'droid_sansbold';
-  src: url("../fonts/DroidSans-Bold-webfont.eot");
-  src: url("../fonts/DroidSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans-Bold-webfont.woff") format("woff"), url("../fonts/DroidSans-Bold-webfont.ttf") format("truetype"), url("../fonts/DroidSans-Bold-webfont.svg#droid_sansbold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'droid_sansregular';
   src: url("../fonts/DroidSans-webfont.eot");
   src: url("../fonts/DroidSans-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/DroidSans-webfont.woff") format("woff"), url("../fonts/DroidSans-webfont.ttf") format("truetype"), url("../fonts/DroidSans-webfont.svg#droid_sansregular") format("svg");
@@ -84,7 +77,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 @font-face {
   font-family: 'Icons';
   src: url("../fonts/Icons.eot");
-  src: url("../fonts/Icons.woff") format("woff"), url("../fonts/Icons.otf") format("truetype"), url("../fonts/Icons.ttf") format("truetype"), url("../fonts/Icons.svg#Icons_sansregular") format("svg");
+  src: url("../fonts/Icons.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Icons.woff") format("woff"), url("../fonts/Icons.ttf") format("truetype"), url("../fonts/Icons.svg#Icons_sansregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }

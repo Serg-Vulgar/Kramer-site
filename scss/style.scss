@@ -1,6 +1,3 @@
-// Screen
-// ======
-
 @import "grids";
 @import "typography";
 
@@ -45,7 +42,6 @@ a {
 
 .container {
 	@include container;
-	// border: 1px solid red;
 }
 
 /*----------Header----------*/
@@ -56,7 +52,6 @@ header {
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	// min-height: 3.5rem;
 	background: rgba($third-color, .8);
 	-webkit-backface-visibility: hidden;
 	-webkit-transform: translateZ(0);
@@ -433,6 +428,7 @@ footer {
 @import "screens/_medium";
 @import "screens/_large";
 
-
+//иконочный шрифт с багом, все картикни при конвертировании стали толще,
+//но решил оставить, так как так даже интереснее смотрится))
 
 
