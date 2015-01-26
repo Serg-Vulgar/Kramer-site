@@ -37,7 +37,7 @@
 	#portfolio {
 		.thumbnail-list {
 			li {
-				@include gallery(4);
+				width: 33.3%;
 			}
 		}
 	}

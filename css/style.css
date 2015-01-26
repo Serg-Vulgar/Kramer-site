@@ -123,6 +123,16 @@ a {
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjZmZiIgc3RvcC1vcGFjaXR5PSIwLjgiLz48c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1jb2xvcj0iI2IzYjNmZiIgc3RvcC1vcGFjaXR5PSIwLjgiLz48c3RvcCBvZmZzZXQ9IjcwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(102, 102, 255, 0.8)), color-stop(70%, rgba(179, 179, 255, 0.8)), color-stop(70%, rgba(0, 0, 0, 0)));
+  background-image: -moz-linear-gradient(left, rgba(102, 102, 255, 0.8), rgba(179, 179, 255, 0.8) 70%, rgba(0, 0, 0, 0) 70%);
+  background-image: -webkit-linear-gradient(left, rgba(102, 102, 255, 0.8), rgba(179, 179, 255, 0.8) 70%, rgba(0, 0, 0, 0) 70%);
+  background-image: linear-gradient(to right, rgba(102, 102, 255, 0.8), rgba(179, 179, 255, 0.8) 70%, rgba(0, 0, 0, 0) 70%);
+  background-size: 8.54701%;
+  background-origin: content-box;
+  background-clip: content-box;
+  background-position: left top;
 }
 .container:after {
   content: " ";
@@ -181,12 +191,12 @@ header .logo {
 
 @media screen and (max-width: 750px) {
   #menu .icon {
-    font-size: 3rem;
+    font-size: 2rem;
     cursor: pointer;
     color: #fff;
     display: block;
     text-align: right;
-    margin-right: 1rem;
+    padding: 1rem;
   }
   #menu .items {
     display: none;
@@ -298,19 +308,19 @@ header .logo {
 
 #portfolio {
   color: #2c3e50;
+  border: 1px solid red;
 }
-
-.portfolio-menu li {
+#portfolio .portfolio-menu li {
   display: inline-block;
   margin-right: .8rem;
 }
-.portfolio-menu li a {
+#portfolio .portfolio-menu li a {
   display: inline-block;
   color: #2c3e50;
   padding: .05rem .8rem;
   font-size: 1.5rem;
 }
-.portfolio-menu li a:hover, .portfolio-menu li a.active {
+#portfolio .portfolio-menu li a:hover, #portfolio .portfolio-menu li a.active {
   color: #fff;
   background-color: #2ecc71;
   -moz-border-radius: 0.9rem;
@@ -318,37 +328,27 @@ header .logo {
   border-radius: 0.9rem;
   behavior: url(js/PIE.htc);
 }
-
-.thumbnail-list {
+#portfolio .thumbnail-list {
   margin-top: 4.4rem;
+  overflow: hidden;
+  overflow: hidden;
+  *zoom: 1;
 }
-.thumbnail-list li {
+#portfolio .thumbnail-list li {
   border: 1px solid #DDD;
-  width: 48.71795%;
-  float: left;
+  width: 50%;
   margin-top: 1.4rem;
   padding: .5rem;
   position: relative;
 }
-.thumbnail-list li:nth-child(2n + 1) {
-  margin-left: 0;
-  margin-right: -100%;
-  clear: both;
-  margin-left: 0;
-}
-.thumbnail-list li:nth-child(2n + 2) {
-  margin-left: 51.28205%;
-  margin-right: -100%;
-  clear: none;
-}
-.thumbnail-list li img {
+#portfolio .thumbnail-list li img {
   max-width: 100%;
 }
-.thumbnail-list li:hover .rollover {
+#portfolio .thumbnail-list li:hover .rollover {
   visibility: visible;
   border: 1px solid #2ecc71;
 }
-.thumbnail-list li .rollover {
+#portfolio .thumbnail-list li .rollover {
   visibility: hidden;
   background: rgba(44, 62, 80, 0.8);
   position: absolute;
@@ -358,13 +358,13 @@ header .logo {
   height: 100%;
   overflow: hidden;
 }
-.thumbnail-list li .rollover h4 {
-  padding-top: 5rem;
+#portfolio .thumbnail-list li .rollover h4 {
+  padding-top: 30%;
   font-size: 1.8rem;
   color: #fff;
   cursor: default;
 }
-.thumbnail-list li .rollover a {
+#portfolio .thumbnail-list li .rollover a {
   margin-top: 1rem;
   display: inline-block;
   padding: .3rem .8rem;
@@ -375,7 +375,7 @@ header .logo {
   font-size: .6rem;
   border: 1px solid #fff;
 }
-.thumbnail-list li .rollover a:hover {
+#portfolio .thumbnail-list li .rollover a:hover {
   background: rgba(46, 204, 113, 0.8);
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
@@ -465,6 +465,7 @@ header .logo {
 }
 #contacts .contacts-info li {
   margin-bottom: 2.2rem;
+  text-align: center;
 }
 #contacts .contacts-info h3 {
   font-size: .8rem;
@@ -538,22 +539,6 @@ footer .contacts-info a {
     font-size: 120px;
   }
 
-  #portfolio .thumbnail-list li {
-    width: 48.71795%;
-    float: left;
-  }
-  #portfolio .thumbnail-list li:nth-child(2n + 1) {
-    margin-left: 0;
-    margin-right: -100%;
-    clear: both;
-    margin-left: 0;
-  }
-  #portfolio .thumbnail-list li:nth-child(2n + 2) {
-    margin-left: 51.28205%;
-    margin-right: -100%;
-    clear: none;
-  }
-
   #team .team-members > li {
     width: 48.71795%;
     float: left;
@@ -581,6 +566,9 @@ footer .contacts-info a {
     width: 31.62393%;
     float: left;
     margin-right: 2.5641%;
+  }
+  #contacts .contacts-info li {
+    text-align: left;
   }
 
   footer .contacts-info {
@@ -639,24 +627,7 @@ footer .contacts-info a {
   }
 
   #portfolio .thumbnail-list li {
-    width: 31.62393%;
-    float: left;
-  }
-  #portfolio .thumbnail-list li:nth-child(3n + 1) {
-    margin-left: 0;
-    margin-right: -100%;
-    clear: both;
-    margin-left: 0;
-  }
-  #portfolio .thumbnail-list li:nth-child(3n + 2) {
-    margin-left: 34.18803%;
-    margin-right: -100%;
-    clear: none;
-  }
-  #portfolio .thumbnail-list li:nth-child(3n + 3) {
-    margin-left: 68.37607%;
-    margin-right: -100%;
-    clear: none;
+    width: 33.3%;
   }
 
   #team .team-members {

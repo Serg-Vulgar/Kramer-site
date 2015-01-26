@@ -103,12 +103,12 @@ header {
 @media screen and (max-width: $small) {
 	#menu {
 		.icon {
-			font-size: 3rem;
+			font-size: 2rem;
 			cursor: pointer;
 			color: #fff;
 			display: block;
 			text-align: right;
-			margin-right: 1rem;
+			padding: 1rem;
 		}
 		.items {
 			display:none;
@@ -230,71 +230,75 @@ header {
 //Portfolio
 #portfolio {
 	color: $third-color;
-}
+	border: 1px solid red;
 
-.portfolio-menu {
-	li {
-		display: inline-block;
-		margin-right: .8rem;
-		a {
+	.portfolio-menu {
+		li {
 			display: inline-block;
-			color: $third-color;
-			padding: .05rem .8rem;
-			font-size: 1.5rem;
-			&:hover, 
-			&.active {
-				color: #fff;
-				background-color: $button-color;
-				@include border-radius(.9rem);
-				behavior: url(js/PIE.htc);
+			margin-right: .8rem;
+			a {
+				display: inline-block;
+				color: $third-color;
+				padding: .05rem .8rem;
+				font-size: 1.5rem;
+				&:hover, 
+				&.active {
+					color: #fff;
+					background-color: $button-color;
+					@include border-radius(.9rem);
+					behavior: url(js/PIE.htc);
+				}
 			}
 		}
 	}
-}
 
-.thumbnail-list {
-	margin-top: 4.4rem;
-	li {
-		border: 1px solid #DDD;
-		@include gallery(6);
-		margin-top: 1.4rem;
-		padding: .5rem;
-		position: relative;
-		img {
-			max-width: 100%;
-		}
-		&:hover {
+	.thumbnail-list {
+		margin-top: 4.4rem;
+		overflow: hidden;
+		@include clearfix;
+		li {
+			border: 1px solid #DDD;
+			// @include gallery(6);//до скрипта работало так
+			width: 50%;//при добавлениии скрипта на фильтрацию, появился баг, лесенка, и span и gallery не помогали, поэтому так)), и также измененено для всех экранов
+			margin-top: 1.4rem;
+			padding: .5rem;
+			position: relative;
+			img {
+				max-width: 100%;
+			}
+			&:hover {
+				.rollover {
+					visibility: visible;
+					border: 1px solid $button-color;
+				}
+			}
 			.rollover {
-				visibility: visible;
-				border: 1px solid $button-color;
-			}
-		}
-		.rollover {
-			visibility: hidden;
-			background: rgba($third-color, .8);
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			h4 {
-				padding-top: 5rem;
-				font-size: 1.8rem;
-				color: #fff;
-				cursor: default;
-			}
-			a {
-				margin-top: 1rem;
-				display: inline-block;
-				padding: .3rem .8rem;
-				@include border-radius(.75rem);
-				behavior: url(js/PIE.htc);
-				font-size: .6rem;
-				border: 1px solid #fff;
-				&:hover {
-					background: rgba($button-color, .8);
-					@include transition-duration(.5s);
+				visibility: hidden;
+				background: rgba($third-color, .8);
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				h4 {
+					padding-top: 30%;
+					font-size: 1.8rem;
+					color: #fff;
+					cursor: default;
+				}
+				a {
+					margin-top: 1rem;
+					display: inline-block;
+					padding: .3rem .8rem;
+					@include border-radius(.75rem);
+					behavior: url(js/PIE.htc);
+					font-size: .6rem;
+					border: 1px solid #fff;
+					&:hover {
+						background: rgba($button-color, .8);
+						@include transition-duration(.5s);
+					}
 				}
 			}
 		}
@@ -383,6 +387,7 @@ header {
 	.contacts-info {
 		li {
 			margin-bottom: 2.2rem;
+			text-align: center;
 		}
 		h3 {
 			font-size: .8rem;

@@ -23,8 +23,8 @@ $susy: (
 	global-box-sizing: border-box,
 	last-flow: to,
 	debug: (
-		image: hide,
-		color: rgba(#66f, .1),
+		image: show,
+		color: rgba(#66f, .8),
 		output: background,
 		toggle: top right,
 	),

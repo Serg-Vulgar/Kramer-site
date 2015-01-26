@@ -25,14 +25,6 @@
 		}
 	}
 
-	#portfolio {
-		.thumbnail-list {
-			li {
-				@include gallery(6);
-			}
-		}
-	}
-
 	#team {
 		.team-members {
 			&>li {
@@ -49,6 +41,9 @@
 		}
 		.contacts-info {
 			@include span(4);
+			li {
+				text-align: left;
+			}
 		}
 	}
 
