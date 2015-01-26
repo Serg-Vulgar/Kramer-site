@@ -168,11 +168,8 @@ header .logo {
   display: inline-block;
   font-size: 1.1rem;
 }
-#menu a:hover {
+#menu a:hover, #menu a.active {
   background: #2ecc71;
-}
-#menu .active {
-  background: red;
 }
 
 .showitems {
@@ -298,7 +295,6 @@ header .logo {
 
 #portfolio {
   color: #2c3e50;
-  border: 1px solid red;
 }
 #portfolio .portfolio-menu li {
   display: inline-block;

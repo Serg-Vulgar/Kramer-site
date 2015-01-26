@@ -86,14 +86,10 @@ header {
 		text-decoration: none;
 		display:inline-block;
 		font-size: 1.1rem;
-		&:hover, {
+		&:hover, &.active {
 			background: $button-color;
 		}
 	}
-	.active {
-		background: red;
-	}
-
 }
 
 .showitems {
@@ -230,7 +226,6 @@ header {
 //Portfolio
 #portfolio {
 	color: $third-color;
-	border: 1px solid red;
 
 	.portfolio-menu {
 		li {
